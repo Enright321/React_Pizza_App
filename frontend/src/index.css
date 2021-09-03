@@ -1,0 +1,111 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
+
+:root {
+  --main-color: #aa0000;
+  --light-main-color: #dd0000;
+  --dark-main-color: #770000;
+  --secondary: #be9e44;
+  --light-secondary: #d8c690;
+  --light-color: #f1f1f1;
+  --original-red: #eb2121;
+  --original-yellow: #fef200;
+}
+
+/* General */
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto Slab', serif;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.card {
+  background: linear-gradient(217deg, #aa0000, rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, #770000, rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, #dd0000, rgba(0, 0, 255, 0) 70.71%);
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+main {
+  background-color: var(--light-color);
+}
+
+.roboto {
+  font-family: 'Roboto Slab', serif;
+}
+
+main {
+  min-height: 80vh;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+.btn,
+.btn-2 {
+  padding: 1rem 2rem;
+  color: var(--original-yellow) !important;
+  background-color: var(--main-color);
+  transition-duration: 0.5s;
+}
+
+.btn-2 {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  color: #000 !important;
+  background-color: var(--light-secondary);
+}
+
+.btn-2:hover {
+  opacity: 0.9;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Header */
+header {
+  background-color: var(--dark-main-color);
+}
+
+header .nav-links {
+  color: #000 !important;
+  transition: 0.4s;
+  margin-bottom: 0 !important;
+}
+
+header .nav-links:hover {
+  color: var(--original-yellow) !important;
+}
+
+.brand-img {
+  max-width: 300px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-main-color);
+  color: var(--original-yellow);
+}
