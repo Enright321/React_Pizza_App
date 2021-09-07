@@ -15,7 +15,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto mx-auto'>
-              <LinkContainer to='/menu'>
+              <LinkContainer to='#menu'>
                 <Nav.Link className='nav-links'>
                   <i className='fas fa-clipboard mr-3 '>
                     <span className='roboto p-1'>MENU</span>{' '}

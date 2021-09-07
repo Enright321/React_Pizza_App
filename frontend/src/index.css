@@ -7,9 +7,13 @@
   --dark-main-color: #770000;
   --secondary: #be9e44;
   --light-secondary: #d8c690;
-  --light-color: #f1f1f1;
+  --light-color: #f6f6f6;
   --original-red: #eb2121;
   --original-yellow: #fef200;
+}
+
+* {
+  font-size: 1rem;
 }
 
 /* General */
@@ -24,6 +28,7 @@ h4,
 h5,
 h6 {
   font-family: 'Roboto Slab', serif;
+  font-size: 2rem;
 }
 
 a,
@@ -33,16 +38,16 @@ a:hover {
 }
 
 .card {
-  background: linear-gradient(217deg, #aa0000, rgba(255, 0, 0, 0) 70.71%),
-    linear-gradient(127deg, #770000, rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, #dd0000, rgba(0, 0, 255, 0) 70.71%);
+  background: radial-gradient(var(--light-main-color), var(--main-color));
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  height: 450px;
+  /* margin: 2rem; */
 }
 
 main {
-  background-color: var(--light-color);
+  background: var(--light-color);
 }
 
 .roboto {
@@ -60,7 +65,7 @@ body {
 .btn,
 .btn-2 {
   padding: 1rem 2rem;
-  color: var(--original-yellow) !important;
+  color: #000 !important;
   background-color: var(--main-color);
   transition-duration: 0.5s;
 }
@@ -70,19 +75,42 @@ body {
   margin-top: 1rem;
 }
 
-.btn:hover {
-  opacity: 0.9;
-  color: #000 !important;
-  background-color: var(--light-secondary);
-}
-
+.btn:hover,
 .btn-2:hover {
   opacity: 0.9;
+  color: var(--original-yellow) !important;
 }
 
 .row {
   display: flex;
-  justify-content: space-evenly;
+
+  justify-content: center;
+  align-items: center;
+}
+.col {
+  justify-content: center;
+  align-items: center;
+}
+
+div.card-body {
+  padding: 0 !important;
+}
+
+div .col .text-center {
+  padding: 0rem !important;
+}
+
+.equal-height-columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.equal-column-content {
+  height: 100%;
+}
+
+.btn-align {
+  margin: -2rem;
 }
 
 /* Header */
@@ -104,8 +132,53 @@ header .nav-links:hover {
   max-width: 300px;
 }
 
+img.card-img-top {
+  padding-bottom: 1rem;
+}
+
 /* Footer */
 footer {
   background-color: var(--dark-main-color);
   color: var(--original-yellow);
+  /* height: 30px; */
+}
+
+footer div.text-center.py-3.col {
+  height: 5rem !important;
+
+  /* position: absolute;
+  bottom: 100%; */
+}
+
+@media only screen and (max-width: 1200px) {
+  .btn-2 {
+    font-size: smaller;
+  }
+  .card {
+    height: 400px;
+  }
+  strong {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .btn-2 {
+    font-size: 0.6rem;
+  }
+
+  strong {
+    font-size: 0.85rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .card {
+    height: 100%;
+  }
+  .btn-2 {
+    font-size: 1rem;
+  }
+  strong {
+    font-size: 1rem;
+  }
 }

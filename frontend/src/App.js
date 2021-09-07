@@ -2,7 +2,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { Container } from 'react-bootstrap';
 import HomeScreen from './screens/HomeScreen';
-import CategoryScreen from './screens/CategoryScreen';
+import SpecificItemScreen from './screens/SpecificItemScreen';
+import MenuScreen from './screens/MenuScreen';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const App = () => {
@@ -12,7 +13,8 @@ const App = () => {
       <main className='py-3'>
         <Container>
           <Route path='/' component={HomeScreen} exact />
-          <Route path='/category/:id' component={CategoryScreen} />
+          <Route path='/menu/:id' component={MenuScreen} />
+          <Route path='/item/:id' component={SpecificItemScreen} />
         </Container>
       </main>
       <Footer />
