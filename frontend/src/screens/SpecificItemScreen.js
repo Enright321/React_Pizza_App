@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup } from 'react-bootstrap';
-
-import menuItems from '../data/menuItems';
+import axios from 'axios';
 
 const SpecificItemScreen = ({ match }) => {
-  const specificItem = menuItems.find((p) => p._id === match.params.id);
+  const [menuItem, setMenuItem] = useState({});
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios.get(`/api/menuItems/${match.params.id}`);
+      setMenuItem(data);
+    };
+    fetchData();
+  }, [match]);
 
   return (
     <>
@@ -14,16 +20,14 @@ const SpecificItemScreen = ({ match }) => {
       </Link>
       <Row>
         <Col md={6}>
-          <Image src={specificItem.image} alt={specificItem.name} fluid />
+          <Image src={menuItem.image} alt={menuItem.name} fluid />
         </Col>
         <Col md={3}>
           <ListGroup variant='flush'>
-            <ListGroup.Item>{specificItem.item}:</ListGroup.Item>
-            <ListGroup.Item>Price: ${specificItem.price}</ListGroup.Item>
-            <ListGroup.Item>{specificItem.text}</ListGroup.Item>
-            <ListGroup.Item>
-              INGREDIENTS: {specificItem.ingredients}
-            </ListGroup.Item>
+            <ListGroup.Item>{menuItem.item}:</ListGroup.Item>
+            <ListGroup.Item>Price: ${menuItem.price}</ListGroup.Item>
+            <ListGroup.Item>{menuItem.text}</ListGroup.Item>
+            <ListGroup.Item>INGREDIENTS: {menuItem.ingredients}</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col md={3}>
@@ -32,7 +36,7 @@ const SpecificItemScreen = ({ match }) => {
               <Row>
                 <Col>Price:</Col>
                 <Col>
-                  <strong>${specificItem.price}</strong>
+                  <strong>${menuItem.price}</strong>
                 </Col>
               </Row>
             </ListGroup.Item>

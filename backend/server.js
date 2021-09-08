@@ -14,5 +14,5 @@ app.get('/api/menuItems/:id', (req, res) => {
   res.json(menuItem);
 });
 
-const PORT = 5000 || PORT;
+const PORT = 5000;
 app.listen(PORT, console.log(`Server started on PORT ${PORT}`));

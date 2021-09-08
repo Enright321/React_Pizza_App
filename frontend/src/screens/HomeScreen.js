@@ -1,5 +1,5 @@
 import { Row, Col } from 'react-bootstrap';
-import menuItems from '../data/menuItems';
+// import menuItems from '../data/menuItems';
 import FoodCategory from '../components/FoodCategory';
 import PizzaSpecial from '../components/PizzaSpecial';
 import React, { useState, useEffect } from 'react';
