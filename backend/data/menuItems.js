@@ -1,6 +1,5 @@
 const menuItems = [
   {
-    _id: '1',
     image: '/images/pizza.jpg',
     description: 'CHOOSE YOUR FAVORITE PIZZA TOPPINGS.',
     item: 'PIZZAS',
@@ -8,38 +7,32 @@ const menuItems = [
     extra_topping: false,
   },
   {
-    _id: '2',
     image: '/images/pasta.jpg',
     description: 'CHECKOUT OUR FAVORITE PASTA SELECTIONS.',
     item: 'PASTAS',
   },
   {
-    _id: '3',
     image: '/images/wings.jpg',
     description: 'NEED SOME APPS. WE GOT THE APPS. VIEW HERE.',
     item: 'APPETIZERS',
   },
   {
-    _id: '4',
     image: '/images/salad.jpg',
     description: 'CEASAR SALAD? CHEFS SALAD? WE GOT YOU COVERED.',
     item: 'SALADS',
   },
   {
-    _id: '5',
     image: '/images/sandwhich.jpg',
     description: 'FRESH SANDWHICHES MADE FOR YOU. SERVED HOT OR COLD.',
     item: 'SANDWHICHES',
   },
 
   {
-    _id: '6',
     image: '/images/pepsi.jpg',
     description: 'CHECKOUT OUR DRINK OPTIONS TO GO WITH YOUR ORDER.',
     item: 'DRINKS & DESSERTS',
   },
   {
-    _id: '7',
     image: '/images/Deluxe.png',
     description:
       'TRY OUT OUR FAMOUS DELUXE PIZZA. NOTHING BEATS A FRESH PIZZA WITH VEGGIES.',
@@ -51,7 +44,6 @@ const menuItems = [
     price: 10.0,
   },
   {
-    _id: '8',
     image: '/images/anti-veggie.png',
     description:
       'NEED SOME PROTIEN? LOOK NO FURTHER. THIS IS THE CHOICE FOR YOU.',
@@ -62,7 +54,6 @@ const menuItems = [
     price: 10.0,
   },
   {
-    _id: '9',
     image: '/images/hamburger.png',
     description:
       'WHOEVER INVENTED THE COMBINATION OF PIZZA AND CHEESEBURGER NEEDS A RAISE.',
@@ -73,7 +64,6 @@ const menuItems = [
     price: 10.0,
   },
   {
-    _id: '10',
     image: '/images/pro-veggie.png',
     description:
       'PIZZA MADE SPECIFICALLY FOR THE VEGGIE LOVERS OUT THERE. WAIT TIL YOU TRY THESE INGREDIENTS!',
@@ -85,7 +75,6 @@ const menuItems = [
     price: 10.0,
   },
   {
-    _id: '11',
     image: '/images/traditional.jpg',
     description:
       'TRAVELING TO HAWAII? NO NEED. LET THIS HAWAIIAN PIZZA TRAVEL INTO YOUR MOUTH.',
@@ -96,7 +85,6 @@ const menuItems = [
     price: 10.0,
   },
   {
-    _id: '12',
     image: '/images/cordonbleu.png',
     description:
       "CHICKEN, HAM, CRISPY BACON... EEEAAASY EEEAAAASY YOU'RE DROOLING ALL OVER THE KEYBOARD.",
@@ -108,7 +96,6 @@ const menuItems = [
     price: 10.0,
   },
   {
-    _id: '13',
     image: '/images/Deluxe.PNG',
     name: 'SMALL - 9in. PIZZA',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -120,7 +107,6 @@ const menuItems = [
     price: 4.99,
   },
   {
-    _id: '14',
     image: '/images/anti-veggie.PNG',
     name: 'MEDIUM - 12in. PIZZA',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -132,7 +118,6 @@ const menuItems = [
     price: 8.99,
   },
   {
-    _id: '15',
     image: '/images/hamburger.PNG',
     name: 'LARGE - 14in. PIZZA',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -144,7 +129,6 @@ const menuItems = [
     price: 12.34,
   },
   {
-    _id: '16',
     image: '/images/pizza.jpg',
     name: 'X-LARGE - 16in. PIZZA',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -156,7 +140,6 @@ const menuItems = [
     price: 15.19,
   },
   {
-    _id: '17',
     image: '/images/chickenstrips.jpg',
     name: 'CHICKEN STRIPS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -168,7 +151,6 @@ const menuItems = [
     price: 7.99,
   },
   {
-    _id: '18',
     image: '/images/raviolis.PNG',
     name: 'RAVIOLI',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -180,7 +162,6 @@ const menuItems = [
     price: 6.99,
   },
   {
-    _id: '19',
     image: '/images/raviolis.PNG',
     name: 'RAVIOLI TUB',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -192,7 +173,6 @@ const menuItems = [
     price: 18.49,
   },
   {
-    _id: '20',
     image: '/images/boscosticks.PNG',
     name: 'BOSCO STICKS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -205,7 +185,6 @@ const menuItems = [
     price: 4.65,
   },
   {
-    _id: '21',
     image: '/images/breadsticks.PNG',
     name: 'BREAD STICKS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -218,7 +197,6 @@ const menuItems = [
   },
 
   {
-    _id: '22',
     image: '/images/garlicbread.jpg',
     name: 'HALF GARLIC CHEESE BREAD - 6 IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -231,7 +209,6 @@ const menuItems = [
     price: 3.99,
   },
   {
-    _id: '23',
     image: '/images/garlicbread.jpg',
     name: 'WHOLE GARLIC CHEESE BREAD - 12 inch',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -244,7 +221,6 @@ const menuItems = [
     price: 5.49,
   },
   {
-    _id: '24',
     image: '/images/jalapeno_poppers.PNG',
     name: 'Jalapeno Poppers',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -256,7 +232,6 @@ const menuItems = [
     price: 6.99,
   },
   {
-    _id: '25',
     image: '/images/fries.PNG',
     name: 'FRENCH FRIES',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -268,7 +243,6 @@ const menuItems = [
     price: 2.25,
   },
   {
-    _id: '26',
     image: '/images/fries_cheese.PNG',
     name: 'FRENCH FRIES WITH CHEESE',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -281,7 +255,6 @@ const menuItems = [
     price: 3.5,
   },
   {
-    _id: '27',
     image: '/images/hot_wings.jpg',
     name: 'HOT WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -293,7 +266,6 @@ const menuItems = [
     price: 7.99,
   },
   {
-    _id: '28',
     image: '/images/hot_wings.jpg',
     name: 'HOT WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -305,7 +277,6 @@ const menuItems = [
     price: 12.99,
   },
   {
-    _id: '39',
     image: '/images/mild_wings.PNG',
     name: 'MILD WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -317,7 +288,6 @@ const menuItems = [
     price: 7.99,
   },
   {
-    _id: '30',
     image: '/images/mild_wings.PNG',
     name: 'MILD WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -329,7 +299,6 @@ const menuItems = [
     price: 12.99,
   },
   {
-    _id: '31',
     image: '/images/bbqwings.PNG',
     name: 'BBQ WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -341,7 +310,6 @@ const menuItems = [
     price: 7.99,
   },
   {
-    _id: '32',
     image: '/images/bbqwings.PNG',
     name: 'BBQ WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -353,7 +321,6 @@ const menuItems = [
     price: 12.99,
   },
   {
-    _id: '33',
     image: '/images/honeymustard_wings.PNG',
     name: 'HONEY MUSTARD WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -365,7 +332,6 @@ const menuItems = [
     price: 7.99,
   },
   {
-    _id: '34',
     image: '/images/honeymustard_wings.PNG',
     name: 'HONEY MUSTARD WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -377,7 +343,6 @@ const menuItems = [
     price: 12.99,
   },
   {
-    _id: '35',
     image: '/images/bbqwings.PNG',
     name: 'TERIYAKI WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -389,7 +354,6 @@ const menuItems = [
     price: 7.99,
   },
   {
-    _id: '36',
     image: '/images/bbqwings.PNG',
     name: 'TERIYAKI WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -401,7 +365,6 @@ const menuItems = [
     price: 12.99,
   },
   {
-    _id: '37',
     image: '/images/wings.jpg',
     name: 'PLAIN WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -413,7 +376,6 @@ const menuItems = [
     price: 7.99,
   },
   {
-    _id: '38',
     image: '/images/wings.jpg',
     name: 'PLAIN WINGS',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -425,7 +387,6 @@ const menuItems = [
     price: 12.99,
   },
   {
-    _id: '39',
     image: '/images/special.PNG',
     name: 'ELICIAS SPECIAL SUB - 6IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -438,7 +399,6 @@ const menuItems = [
     price: 5.99,
   },
   {
-    _id: '40',
     image: '/images/special.PNG',
     name: 'ELICIAS SPECIAL SUB - 12IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -451,7 +411,6 @@ const menuItems = [
     price: 8.99,
   },
   {
-    _id: '41',
     image: '/images/sandwhich.jpg',
     name: 'ROAST BEEF SUB - 6IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -464,7 +423,6 @@ const menuItems = [
     price: 5.99,
   },
   {
-    _id: '42',
     image: '/images/sandwhich.jpg',
     name: 'ROAST BEEF SUB - 12IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -477,7 +435,6 @@ const menuItems = [
     price: 8.99,
   },
   {
-    _id: '43',
     image: '/images/sandwhich.jpg',
     name: 'HAM SUB - 6IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -490,7 +447,6 @@ const menuItems = [
     price: 5.5,
   },
   {
-    _id: '44',
     image: '/images/sandwhich.jpg',
     name: 'HAM SUB - 12IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -503,7 +459,6 @@ const menuItems = [
     price: 8.49,
   },
   {
-    _id: '45',
     image: '/images/special.PNG',
     name: 'TURKEY AND CHEESE - 6IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -516,7 +471,6 @@ const menuItems = [
     price: 5.5,
   },
   {
-    _id: '46',
     image: '/images/special.PNG',
     name: 'TURKEY AND CHEESE SUB - 12IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -529,7 +483,6 @@ const menuItems = [
     price: 8.5,
   },
   {
-    _id: '47',
     image: '/images/special.PNG',
     name: 'TURKEY CLUB SUB - 6IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -542,7 +495,6 @@ const menuItems = [
     price: 5.99,
   },
   {
-    _id: '48',
     image: '/images/special.PNG',
     name: 'TURKEY CLUB SUB - 12IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -555,7 +507,6 @@ const menuItems = [
     price: 8.99,
   },
   {
-    _id: '49',
     image: '/images/meatball.PNG',
     name: 'MEATBALL SUB - 6IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -568,7 +519,6 @@ const menuItems = [
     price: 5.99,
   },
   {
-    _id: '50',
     image: '/images/meatball.PNG',
     name: 'MEATBALL SUB - 12IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -581,7 +531,6 @@ const menuItems = [
     price: 8.99,
   },
   {
-    _id: '51',
     image: '/images/special.PNG',
     name: 'SALAMI AND CHEESE SUB - 6IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -594,7 +543,6 @@ const menuItems = [
     price: 5.5,
   },
   {
-    _id: '52',
     image: '/images/special.PNG',
     name: 'SALAMI AND CHEESE SUB - 12IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -607,7 +555,6 @@ const menuItems = [
     price: 8.5,
   },
   {
-    _id: '53',
     image: '/images/special.PNG',
     name: 'BLT SUB - 6IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -619,7 +566,6 @@ const menuItems = [
     price: 5.99,
   },
   {
-    _id: '54',
     image: '/images/special.PNG',
     name: 'BLT SUB - 12IN.',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -632,7 +578,6 @@ const menuItems = [
   },
 
   {
-    _id: '55',
     image: '/images/dinnersalad.PNG',
     name: 'DINNER SALAD',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -644,7 +589,6 @@ const menuItems = [
     price: 3.99,
   },
   {
-    _id: '56',
     image: '/images/chefsalad.PNG',
     name: 'CHEF SALAD',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -656,7 +600,6 @@ const menuItems = [
     price: 5.79,
   },
   {
-    _id: '57',
     image: '/images/veggiesalad.PNG',
     name: 'VEGGIE SALAD',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -669,7 +612,6 @@ const menuItems = [
     price: 5.79,
   },
   {
-    _id: '58',
     image: '/images/chickensalad.PNG',
     name: 'CHICKEN SALAD',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -682,7 +624,6 @@ const menuItems = [
     price: 5.49,
   },
   {
-    _id: '59',
     image: '/images/deluxesalad.PNG',
     name: 'DELUXE SALAD',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -695,7 +636,6 @@ const menuItems = [
     price: 4.99,
   },
   {
-    _id: '60',
     image: '/images/dinnersalad.PNG',
     name: 'HALF SIZE DINNER SALAD',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -708,7 +648,6 @@ const menuItems = [
     price: 1.99,
   },
   {
-    _id: '61',
     image: '/images/mostaccioli.jpg',
     name: 'BAKED MOSTACCIOLI',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -720,7 +659,6 @@ const menuItems = [
     price: 6.99,
   },
   {
-    _id: '62',
     image: '/images/canneloni.jpg',
     name: 'BAKED CANNELONI',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -733,7 +671,6 @@ const menuItems = [
     price: 6.99,
   },
   {
-    _id: '63',
     image: '/images/canneloni.jpg',
     name: 'LARGE BAKED CANNELONI',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -746,7 +683,6 @@ const menuItems = [
     price: 8.25,
   },
   {
-    _id: '64',
     image: '/images/chickenalfredo.jpg',
     name: 'CHICKEN ALFREDO',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -759,7 +695,6 @@ const menuItems = [
     price: 8.25,
   },
   {
-    _id: '65',
     image: '/images/alfredopasta.jpg',
     name: 'ALFREDO PASTA WITH CHEESE',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -771,7 +706,6 @@ const menuItems = [
     price: 6.99,
   },
   {
-    _id: '66',
     image: '/images/pepsi.jpg',
     name: 'PEPSI',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -783,7 +717,6 @@ const menuItems = [
     price: 0.82,
   },
   {
-    _id: '67',
     image: '/images/dietpepsi.jpg',
     name: 'DIET PEPSI',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -795,7 +728,6 @@ const menuItems = [
     price: 0.82,
   },
   {
-    _id: '68',
     image: '/images/mountaindew.jpg',
     name: 'MOUNTAIN DEW',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -807,7 +739,6 @@ const menuItems = [
     price: 0.82,
   },
   {
-    _id: '69',
     image: '/images/mountaindew.jpg',
     name: 'DIET MOUNTAIN DEW',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -819,7 +750,6 @@ const menuItems = [
     price: 0.82,
   },
   {
-    _id: '70',
     image: '/images/7up.jpg',
     name: '7UP',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -831,7 +761,6 @@ const menuItems = [
     price: 0.82,
   },
   {
-    _id: '71',
     image: '/images/pepsi.jpg',
     name: 'ORANGE CRUSH',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -843,7 +772,6 @@ const menuItems = [
     price: 0.82,
   },
   {
-    _id: '72',
     image: '/images/pepsi.jpg',
     name: 'DR. PEPPER',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -855,7 +783,6 @@ const menuItems = [
     price: 0.82,
   },
   {
-    _id: '73',
     image: '/images/pepsi.jpg',
     name: 'DIET DR. PEPPER',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -867,7 +794,6 @@ const menuItems = [
     price: 0.82,
   },
   {
-    _id: '74',
     image: '/images/pepsi.jpg',
     name: 'PEPSI',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -879,7 +805,6 @@ const menuItems = [
     price: 2.69,
   },
   {
-    _id: '75',
     image: '/images/wings.jpg',
     name: 'DIET PEPSI',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -891,7 +816,6 @@ const menuItems = [
     price: 2.69,
   },
   {
-    _id: '76',
     image: '/images/wings.jpg',
     name: 'MOUNTAIN DEW',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -903,7 +827,6 @@ const menuItems = [
     price: 2.69,
   },
   {
-    _id: '77',
     image: '/images/wings.jpg',
     name: '7UP',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -915,7 +838,6 @@ const menuItems = [
     price: 2.69,
   },
   {
-    _id: '78',
     image: '/images/wings.jpg',
     name: 'DR. PEPPER',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -927,7 +849,6 @@ const menuItems = [
     price: 2.69,
   },
   {
-    _id: '79',
     image: '/images/wings.jpg',
     name: 'DIET DR. PEPPER',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -939,7 +860,6 @@ const menuItems = [
     price: 2.69,
   },
   {
-    _id: '80',
     image: '/images/wings.jpg',
     name: 'ORANGE CRUSH',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -951,7 +871,6 @@ const menuItems = [
     price: 2.69,
   },
   {
-    _id: '81',
     image: '/images/chocolatechipcookie.PNG',
     name: 'CHOCOLATE CHIP COOKIE',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -963,7 +882,6 @@ const menuItems = [
     price: 5.99,
   },
   {
-    _id: '82',
     image: '/images/chocolatecake.PNG',
     name: 'CHOCOLATE CAKE',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -975,7 +893,6 @@ const menuItems = [
     price: 4.5,
   },
   {
-    _id: '83',
     image: '/images/cheesecake.PNG',
     name: 'CHEESECAKE',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -987,7 +904,6 @@ const menuItems = [
     price: 3.99,
   },
   {
-    _id: '84',
     image: '/images/chocolateicecream.PNG',
     name: 'TED DREWES',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -999,7 +915,6 @@ const menuItems = [
     price: 3.5,
   },
   {
-    _id: '85',
     image: '/images/vanillaicecream.PNG',
     name: 'TED DREWES',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -1011,7 +926,6 @@ const menuItems = [
     price: 3.5,
   },
   {
-    _id: '86',
     image: '/images/strawberryicecream.PNG',
     name: 'TED DREWES',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -1023,7 +937,6 @@ const menuItems = [
     price: 3.5,
   },
   {
-    _id: '87',
     image: '/images/vanillaicecream.PNG',
     name: 'TED DREWES',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -1035,7 +948,6 @@ const menuItems = [
     price: 3.75,
   },
   {
-    _id: '88',
     image: '/images/wings.jpg',
     name: 'CRUSHED RED PEPPER',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -1047,7 +959,6 @@ const menuItems = [
     price: 0.4,
   },
   {
-    _id: '89',
     image: '/images/wings.jpg',
     name: 'PARMESAN',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -1059,7 +970,6 @@ const menuItems = [
     price: 0.4,
   },
   {
-    _id: '90',
     image: '/images/wings.jpg',
     name: 'MAYO PACKET',
     text: 'A savory blend of diced chicken covered with extra cheese, then topped with crispy bacon and delicios ham.',
@@ -1072,4 +982,4 @@ const menuItems = [
   },
 ];
 
-module.exports = menuItems;
+export default menuItems;

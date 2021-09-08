@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Spinner } from 'react-bootstrap';
 import SpecificItem from '../components/SpecificItem';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -34,7 +34,9 @@ const MenuScreen = () => {
         Go Back
       </Link>
       {loading ? (
-        <h2>Is Loading...</h2>
+        <Spinner animation='border' role='status'>
+          <span className='visually-hidden'></span>
+        </Spinner>
       ) : (
         <Row>
           {urlMatch === 'http://localhost:3000/menu/1'

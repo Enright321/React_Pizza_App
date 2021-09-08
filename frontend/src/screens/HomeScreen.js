@@ -1,4 +1,4 @@
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Spinner } from 'react-bootstrap';
 // import menuItems from '../data/menuItems';
 import FoodCategory from '../components/FoodCategory';
 import PizzaSpecial from '../components/PizzaSpecial';
@@ -7,11 +7,14 @@ import axios from 'axios';
 
 const HomeScreen = () => {
   const [menuItems, setMenuItems] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setLoading(true);
       const { data } = await axios.get('/api/menuItems');
       setMenuItems(data);
+      setLoading(false);
     };
     fetchProducts();
   }, []);
@@ -22,22 +25,33 @@ const HomeScreen = () => {
   return (
     <>
       <h2 className='text-center'>SELECT A CATEGORY TO GET STARTED!</h2>
-      <Row>
-        {food.map((foodCategory) => (
-          <Col key={foodCategory._id} sm={12} md={4}>
-            <FoodCategory foodCategory={foodCategory} />
-          </Col>
-        ))}
-      </Row>
+
+      {loading ? (
+        <Spinner animation='border' role='status'>
+          <span className='visually-hidden'></span>
+        </Spinner>
+      ) : (
+        <Row>
+          {food.map((foodCategory) => (
+            <Col key={foodCategory._id} sm={12} md={4}>
+              <FoodCategory foodCategory={foodCategory} />
+            </Col>
+          ))}
+        </Row>
+      )}
 
       <h2 className='text-center py-3'>TAKE A LOOK AT OUR SPECIALTY PIZZAS!</h2>
-      <Row>
-        {pizzaSpecials.map((pizzaSpecial) => (
-          <Col key={pizzaSpecial._id} sm={12} md={4}>
-            <PizzaSpecial pizzaSpecial={pizzaSpecial} />
-          </Col>
-        ))}
-      </Row>
+      {loading ? (
+        <h2>Is Loading</h2>
+      ) : (
+        <Row>
+          {pizzaSpecials.map((pizzaSpecial) => (
+            <Col key={pizzaSpecial._id} sm={12} md={4}>
+              <PizzaSpecial pizzaSpecial={pizzaSpecial} />
+            </Col>
+          ))}
+        </Row>
+      )}
     </>
   );
 };
