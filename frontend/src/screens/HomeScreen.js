@@ -1,35 +1,33 @@
-import { Row, Col, Spinner } from 'react-bootstrap';
-// import menuItems from '../data/menuItems';
+import { Row, Col } from 'react-bootstrap';
 import FoodCategory from '../components/FoodCategory';
 import PizzaSpecial from '../components/PizzaSpecial';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { listMenuItems } from '../actions/menuItemActions';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
 
 const HomeScreen = () => {
-  const [menuItems, setMenuItems] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+
+  const menuItemList = useSelector((state) => state.menuItemList);
+  const { loading, error, menuItems } = menuItemList;
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      const { data } = await axios.get('/api/menuItems');
-      setMenuItems(data);
-      setLoading(false);
-    };
-    fetchProducts();
-  }, []);
+    dispatch(listMenuItems());
+  }, [dispatch]);
 
   let food = menuItems.slice(0, 6);
-  let pizzaSpecials = menuItems.slice(6, 12);
+  let pizzaSpecials = menuItems.slice(7, 13);
 
   return (
     <>
       <h2 className='text-center'>SELECT A CATEGORY TO GET STARTED!</h2>
 
       {loading ? (
-        <Spinner animation='border' role='status'>
-          <span className='visually-hidden'></span>
-        </Spinner>
+        <Loader />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           {food.map((foodCategory) => (
@@ -42,7 +40,9 @@ const HomeScreen = () => {
 
       <h2 className='text-center py-3'>TAKE A LOOK AT OUR SPECIALTY PIZZAS!</h2>
       {loading ? (
-        <h2>Is Loading</h2>
+        <h3>Loading</h3>
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           {pizzaSpecials.map((pizzaSpecial) => (

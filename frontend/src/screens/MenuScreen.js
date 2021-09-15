@@ -1,29 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { Row, Col, Spinner } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Row, Col } from 'react-bootstrap';
 import SpecificItem from '../components/SpecificItem';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
+import { listMenuItems } from '../actions/menuItemActions';
 
 const MenuScreen = () => {
-  const [menuItems, setMenuItems] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+
+  const menuItemList = useSelector((state) => state.menuItemList);
+  const { loading, error, menuItems } = menuItemList;
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      const { data } = await axios.get(`/api/menuItems`);
-      setMenuItems(data);
-      setLoading(false);
-    };
-    fetchProducts();
-  }, []);
+    dispatch(listMenuItems());
+  }, [dispatch]);
 
-  let pizzas = menuItems.slice(12, 16);
-  let apps = menuItems.slice(16, 38);
-  let subs = menuItems.slice(38, 54);
-  let salads = menuItems.slice(54, 60);
-  let pastas = menuItems.slice(60, 65);
-  let drinks_desserts = menuItems.slice(65, 87);
+  let pizzas = menuItems.slice(6, 7);
+  let apps = menuItems.slice(13, 26);
+  let subs = menuItems.slice(26, 34);
+  let salads = menuItems.slice(34, 40);
+  let pastas = menuItems.slice(40, 44);
+  let drinks_desserts = menuItems.slice(44, 66);
 
   const urlMatch = window.location.href;
 
@@ -33,43 +32,45 @@ const MenuScreen = () => {
       <Link className='btn my-3' to='/'>
         Go Back
       </Link>
+
       {loading ? (
-        <Spinner animation='border' role='status'>
-          <span className='visually-hidden'></span>
-        </Spinner>
+        <Loader />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
-          {urlMatch === 'http://localhost:3000/menu/1'
+          {urlMatch === 'http://localhost:3000/menu/613c56ba902b44af907db166'
             ? pizzas.map((foodCategory) => (
                 <Col key={foodCategory._id} sm={12} md={4}>
                   <SpecificItem foodCategory={foodCategory} />
                 </Col>
               ))
-            : urlMatch === 'http://localhost:3000/menu/2'
+            : urlMatch === 'http://localhost:3000/menu/613c56ba902b44af907db167'
             ? pastas.map((foodCategory) => (
                 <Col key={foodCategory._id} sm={12} md={4}>
                   <SpecificItem foodCategory={foodCategory} />
                 </Col>
               ))
-            : urlMatch === 'http://localhost:3000/menu/3'
+            : urlMatch === 'http://localhost:3000/menu/613c56ba902b44af907db168'
             ? apps.map((foodCategory) => (
                 <Col key={foodCategory._id} sm={12} md={4}>
                   <SpecificItem foodCategory={foodCategory} />
                 </Col>
               ))
-            : urlMatch === 'http://localhost:3000/menu/4'
+            : urlMatch === 'http://localhost:3000/menu/613c56ba902b44af907db169'
             ? salads.map((foodCategory) => (
                 <Col key={foodCategory._id} sm={12} md={4}>
                   <SpecificItem foodCategory={foodCategory} />
                 </Col>
               ))
-            : urlMatch === 'http://localhost:3000/menu/5'
+            : urlMatch === 'http://localhost:3000/menu/613c56ba902b44af907db16a'
             ? subs.map((foodCategory) => (
                 <Col key={foodCategory._id} sm={12} md={4}>
                   <SpecificItem foodCategory={foodCategory} />
                 </Col>
               ))
-            : urlMatch === 'http://localhost:3000/menu/6' &&
+            : urlMatch ===
+                'http://localhost:3000/menu/613c56ba902b44af907db16b' &&
               drinks_desserts.map((foodCategory) => (
                 <Col key={foodCategory._id} sm={12} md={4}>
                   <SpecificItem foodCategory={foodCategory} />

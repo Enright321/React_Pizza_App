@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Row, Col, Image, ListGroup, Spinner } from 'react-bootstrap';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { Row, Col, Image, ListGroup, Form, Button } from 'react-bootstrap';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
+import { listMenuItemDetails } from '../actions/menuItemActions';
 
-const SpecificItemScreen = ({ match }) => {
-  const [menuItem, setMenuItem] = useState({});
-  const [loading, setLoading] = useState(false);
+const SpecificItemScreen = ({ history, match }) => {
+  const [qty, setQty] = useState(1);
+  const [topping, setTopping] = useState([]);
+
+  const dispatch = useDispatch();
+
+  const menuItemDetails = useSelector((state) => state.menuItemDetails);
+  const { loading, error, menuItem } = menuItemDetails;
+
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const { data } = await axios.get(`/api/menuItems/${match.params.id}`);
-      setMenuItem(data);
-      setLoading(false);
-    };
-    fetchData();
-  }, [match]);
+    dispatch(listMenuItemDetails(match.params.id));
+  }, [dispatch, match]);
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${match.params.id}?qty=${qty}?topping=${topping}`);
+  };
 
   return (
     <>
@@ -22,9 +29,9 @@ const SpecificItemScreen = ({ match }) => {
         Go Back
       </Link>
       {loading ? (
-        <Spinner animation='border' role='status'>
-          <span className='visually-hidden'></span>
-        </Spinner>
+        <Loader />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           <Col md={6}>
@@ -51,9 +58,60 @@ const SpecificItemScreen = ({ match }) => {
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
-                <a href='/#' className='btn-block btn'>
+                <Row>
+                  <Col>Status:</Col>
+                  <Col>
+                    {menuItem.maxOrder > 0 ? 'In Stock' : 'Out Of Stock'}
+                  </Col>
+                </Row>
+              </ListGroup.Item>
+              {menuItem.maxOrder > 0 && (
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Qty</Col>
+                    <Col>
+                      <Form.Control
+                        as='select'
+                        value={qty}
+                        onChange={(e) => setQty(e.target.value)}
+                      >
+                        {[...Array(menuItem.maxOrder).keys()].map((x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        ))}
+                      </Form.Control>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              )}
+              {menuItem.toppings && (
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Toppings</Col>
+                    <Col>
+                      <Form.Control
+                        as='select'
+                        value={topping}
+                        onChange={(e) => setTopping(e.target.value)}
+                      >
+                        {menuItem.toppings.map((topping) => (
+                          <option key={topping}>topping</option>
+                        ))}
+                        <option></option>
+                      </Form.Control>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              )}
+              <ListGroup.Item>
+                <Button
+                  type='button'
+                  className='btn-block btn'
+                  onClick={addToCartHandler}
+                >
                   Add to Cart
-                </a>
+                </Button>
               </ListGroup.Item>
             </ListGroup>
           </Col>

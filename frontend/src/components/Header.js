@@ -57,8 +57,8 @@ const Header = () => {
                 </Nav.Link>
               </LinkContainer>
 
-              <LinkContainer to='/login'>
-                <Nav.Link className='btn'>PLACE AN ORDER</Nav.Link>
+              <LinkContainer to='/cart'>
+                <Nav.Link className='btn'>SHOPPING CART</Nav.Link>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>
