@@ -17,8 +17,8 @@ const HomeScreen = () => {
     dispatch(listMenuItems());
   }, [dispatch]);
 
-  let food = menuItems.slice(0, 6);
-  let pizzaSpecials = menuItems.slice(7, 13);
+  let food = menuItems;
+  let pizzaSpecials = menuItems;
 
   return (
     <>
@@ -30,11 +30,13 @@ const HomeScreen = () => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
-          {food.map((foodCategory) => (
-            <Col key={foodCategory._id} sm={12} md={4}>
-              <FoodCategory foodCategory={foodCategory} />
-            </Col>
-          ))}
+          {food
+            .filter((foodCategory) => foodCategory.key === 'category')
+            .map((foodCategory) => (
+              <Col key={foodCategory._id} sm={12} md={4}>
+                <FoodCategory foodCategory={foodCategory} />
+              </Col>
+            ))}
         </Row>
       )}
 
@@ -45,11 +47,13 @@ const HomeScreen = () => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
-          {pizzaSpecials.map((pizzaSpecial) => (
-            <Col key={pizzaSpecial._id} sm={12} md={4}>
-              <PizzaSpecial pizzaSpecial={pizzaSpecial} />
-            </Col>
-          ))}
+          {pizzaSpecials
+            .filter((pizzaSpecial) => pizzaSpecial.key === 'special')
+            .map((pizzaSpecial) => (
+              <Col key={pizzaSpecial._id} sm={12} md={4}>
+                <PizzaSpecial pizzaSpecial={pizzaSpecial} />
+              </Col>
+            ))}
         </Row>
       )}
     </>

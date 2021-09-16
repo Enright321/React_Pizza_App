@@ -9,6 +9,7 @@ import { listMenuItemDetails } from '../actions/menuItemActions';
 const SpecificItemScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
   const [topping, setTopping] = useState([]);
+  const [size, setSize] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -57,14 +58,7 @@ const SpecificItemScreen = ({ history, match }) => {
                   </Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Status:</Col>
-                  <Col>
-                    {menuItem.maxOrder > 0 ? 'In Stock' : 'Out Of Stock'}
-                  </Col>
-                </Row>
-              </ListGroup.Item>
+
               {menuItem.maxOrder > 0 && (
                 <ListGroup.Item>
                   <Row>
@@ -92,13 +86,43 @@ const SpecificItemScreen = ({ history, match }) => {
                     <Col>
                       <Form.Control
                         as='select'
+                        multiple={true}
                         value={topping}
                         onChange={(e) => setTopping(e.target.value)}
                       >
                         {menuItem.toppings.map((topping) => (
-                          <option key={topping}>topping</option>
+                          <option key={topping}>{topping}</option>
+                          // <select key={topping} name='toppings'>
+                          //   <option multiple={true} value={topping}>
+                          //     {topping}
+                          //   </option>
+                          // </select>
                         ))}
-                        <option></option>
+                      </Form.Control>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              )}
+              {menuItem.sizes && (
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Select Size</Col>
+                    <Col>
+                      <Form.Control
+                        as='select'
+                        value={size}
+                        onChange={(e) => setSize(e.target.value)}
+                      >
+                        {menuItem.sizes.map((size) => (
+                          <option multiple={true} key={size}>
+                            {size}
+                          </option>
+                          // <select key={topping} name='toppings'>
+                          //   <option multiple={true} value={topping}>
+                          //     {topping}
+                          //   </option>
+                          // </select>
+                        ))}
                       </Form.Control>
                     </Col>
                   </Row>
