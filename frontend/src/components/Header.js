@@ -25,10 +25,10 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto mx-auto'>
-              <LinkContainer to='#menu'>
+              <LinkContainer to='item/613c56ba902b44af907db16c'>
                 <Nav.Link className='nav-links'>
-                  <i className='fas fa-clipboard mr-3 '>
-                    <span className='roboto p-1'>MENU</span>{' '}
+                  <i class='fas fa-pizza-slice mr-3'>
+                    <span className='roboto p-1'>PIZZA</span>{' '}
                   </i>
                 </Nav.Link>
               </LinkContainer>
@@ -42,13 +42,13 @@ const Header = () => {
                 </Nav.Link>
               </LinkContainer>
 
-              <LinkContainer to='/about'>
+              {/* <LinkContainer to='/about'>
                 <Nav.Link className='nav-links'>
                   <i className='fas fa-question-circle mr-3'>
                     <span className='roboto p-1'>ABOUT</span>
                   </i>
                 </Nav.Link>
-              </LinkContainer>
+              </LinkContainer> */}
 
               <LinkContainer to='/locations'>
                 <Nav.Link className='nav-links'>
@@ -76,6 +76,20 @@ const Header = () => {
                     </i>
                   </Nav.Link>
                 </LinkContainer>
+              )}
+
+              {userInfo && userInfo.isAdmin && (
+                <NavDropdown title='Admin' id='adminmenu'>
+                  <LinkContainer to='/admin/userlist'>
+                    <NavDropdown.Item>Users</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/menuItemlist'>
+                    <NavDropdown.Item>Products</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/orderlist'>
+                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
               )}
 
               <LinkContainer to='/cart'>

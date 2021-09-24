@@ -5,11 +5,20 @@ import { Row, Col, Image, ListGroup, Form, Button } from 'react-bootstrap';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { listMenuItemDetails } from '../actions/menuItemActions';
+import { addToCart } from '../actions/cartActions';
 
-const SpecificItemScreen = ({ history, match }) => {
+const SpecificItemScreen = ({ history, match, props }) => {
   const [qty, setQty] = useState(1);
-  const [topping, setTopping] = useState([]);
+  const [selectedToppings, setSelectedToppings] = useState([]);
   const [size, setSize] = useState([]);
+
+  const handleSelect = (selectedItems) => {
+    const toppings = [];
+    for (let i = 0; i < selectedItems.length; i++) {
+      toppings.push(selectedItems[i].value);
+    }
+    setSelectedToppings(toppings);
+  };
 
   const dispatch = useDispatch();
 
@@ -20,8 +29,16 @@ const SpecificItemScreen = ({ history, match }) => {
     dispatch(listMenuItemDetails(match.params.id));
   }, [dispatch, match]);
 
-  const addToCartHandler = () => {
-    history.push(`/cart/${match.params.id}?qty=${qty}?topping=${topping}`);
+  // const addToCartHandler = () => {
+  //   history.push(
+  //     `/cart/${match.params.id}?qty=${qty}?topping=${selectedToppings}?size=${size}`
+  //   );
+  // };
+
+  const addToCartHandler = (e) => {
+    e.preventDefault();
+    dispatch(addToCart(menuItem._id, qty, size, selectedToppings));
+    history.push('/cart');
   };
 
   return (
@@ -35,30 +52,23 @@ const SpecificItemScreen = ({ history, match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
-          <Col md={6}>
+          <Col md={5}>
             <Image src={menuItem.image} alt={menuItem.name} fluid />
           </Col>
           <Col md={3}>
             <ListGroup variant='flush'>
               <ListGroup.Item>{menuItem.item}:</ListGroup.Item>
-              <ListGroup.Item>Price: ${menuItem.price}</ListGroup.Item>
+              <ListGroup.Item>${menuItem.price}</ListGroup.Item>
               <ListGroup.Item>{menuItem.text}</ListGroup.Item>
-              <ListGroup.Item>
-                INGREDIENTS: {menuItem.ingredients}
-              </ListGroup.Item>
+              {menuItem.ingredients && (
+                <ListGroup.Item>
+                  INGREDIENTS: {menuItem.ingredients}
+                </ListGroup.Item>
+              )}
             </ListGroup>
           </Col>
-          <Col md={3}>
+          <Col md={4}>
             <ListGroup variant='flush'>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Price:</Col>
-                  <Col>
-                    <strong>${menuItem.price}</strong>
-                  </Col>
-                </Row>
-              </ListGroup.Item>
-
               {menuItem.maxOrder > 0 && (
                 <ListGroup.Item>
                   <Row>
@@ -82,21 +92,27 @@ const SpecificItemScreen = ({ history, match }) => {
               {menuItem.toppings && (
                 <ListGroup.Item>
                   <Row>
-                    <Col>Toppings</Col>
+                    <Col>
+                      Toppings (
+                      <small>
+                        Hold ctrl and left click to select multiple toppings.
+                      </small>
+                      )
+                    </Col>
+
                     <Col>
                       <Form.Control
                         as='select'
                         multiple={true}
-                        value={topping}
-                        onChange={(e) => setTopping(e.target.value)}
+                        value={selectedToppings}
+                        onChange={(e) => {
+                          handleSelect(e.target.selectedOptions);
+                        }}
                       >
                         {menuItem.toppings.map((topping) => (
-                          <option key={topping}>{topping}</option>
-                          // <select key={topping} name='toppings'>
-                          //   <option multiple={true} value={topping}>
-                          //     {topping}
-                          //   </option>
-                          // </select>
+                          <option value={topping} key={topping}>
+                            {topping}
+                          </option>
                         ))}
                       </Form.Control>
                     </Col>

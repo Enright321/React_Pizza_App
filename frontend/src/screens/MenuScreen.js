@@ -17,12 +17,23 @@ const MenuScreen = () => {
     dispatch(listMenuItems());
   }, [dispatch]);
 
-  let pizzas = menuItems.slice(6, 7);
-  let apps = menuItems.slice(13, 26);
-  let subs = menuItems.slice(26, 34);
-  let salads = menuItems.slice(34, 40);
-  let pastas = menuItems.slice(40, 44);
-  let drinks_desserts = menuItems.slice(44, 66);
+  let pizzas = menuItems.filter(
+    (menuItem) => menuItem.menuCategory === 'pizzas'
+  );
+  let apps = menuItems.filter((menuItem) => menuItem.menuCategory === 'apps');
+  let subs = menuItems.filter((menuItem) => menuItem.menuCategory === 'subs');
+  let salads = menuItems.filter(
+    (menuItem) => menuItem.menuCategory === 'salads'
+  );
+  let pastas = menuItems.filter(
+    (menuItem) => menuItem.menuCategory === 'pastas'
+  );
+  let drinks = menuItems.filter(
+    (menuItem) => menuItem.menuCategory === 'drinks'
+  );
+  let desserts = menuItems.filter(
+    (menuItem) => menuItem.menuCategory === 'desserts'
+  );
 
   const urlMatch = window.location.href;
 
@@ -69,9 +80,15 @@ const MenuScreen = () => {
                   <SpecificItem foodCategory={foodCategory} />
                 </Col>
               ))
+            : urlMatch === 'http://localhost:3000/menu/614cfcba725eab501a5722d1'
+            ? desserts.map((foodCategory) => (
+                <Col key={foodCategory._id} sm={12} md={4}>
+                  <SpecificItem foodCategory={foodCategory} />
+                </Col>
+              ))
             : urlMatch ===
                 'http://localhost:3000/menu/613c56ba902b44af907db16b' &&
-              drinks_desserts.map((foodCategory) => (
+              drinks.map((foodCategory) => (
                 <Col key={foodCategory._id} sm={12} md={4}>
                   <SpecificItem foodCategory={foodCategory} />
                 </Col>
