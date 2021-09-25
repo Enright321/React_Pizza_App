@@ -4,65 +4,65 @@ import { Row, Col } from 'react-bootstrap';
 const LocationsScreen = () => {
   return (
     <div className='py-3'>
-      <h2 className='text-center py-4'>ELICIA'S LOCATIONS</h2>
+      <h2 className='text-center py-4'>STORE LOCATIONS</h2>
+      <Row>
+        <Col>
+          <img src='./images/loc1.PNG' alt='location' variant='top' />
+        </Col>
+        <Col>
+          <Row>
+            <h3>1111 Main St.</h3>
+          </Row>
+          <Row>
+            <h6>Serving Area 1 and Area 2</h6>
+          </Row>
+          <Row>
+            <h5>333-333-3333</h5>
+          </Row>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Row>
+            <h3>2222 West St.</h3>
+          </Row>
+          <Row>
+            <h6>Serving Locations 3 and 4</h6>
+          </Row>
+          <Row>
+            <h5>444-444-4444</h5>
+          </Row>
+        </Col>
+        <Col>
+          <img src='./images/loc2.jpg' alt='location' variant='top' />
+        </Col>
+      </Row>
       <Row>
         <Col>
           <img src='./images/loc3.jpg' alt='location' variant='top' />
         </Col>
         <Col>
           <Row>
-            <h3>6656 Gravois Ave.</h3>
+            <h3>5555 West St.</h3>
           </Row>
           <Row>
-            <h6>Serving South City and Affton</h6>
+            <h6>Serving Area 5 and 6</h6>
           </Row>
           <Row>
-            <h5>314-351-6111</h5>
-          </Row>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Row>
-            <h3>8570 Watson Rd.</h3>
-          </Row>
-          <Row>
-            <h6>Serving Webster and Crestwood</h6>
-          </Row>
-          <Row>
-            <h5>314-842-2222</h5>
-          </Row>
-        </Col>
-        <Col>
-          <img src='./images/loc.jpg' alt='location' variant='top' />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <img src='./images/loc5.jpg' alt='location' variant='top' />
-        </Col>
-        <Col>
-          <Row>
-            <h3>2801 Hampton Ave.</h3>
-          </Row>
-          <Row>
-            <h6>Serving Dogtown and The Hill</h6>
-          </Row>
-          <Row>
-            <h5>314-645-6000</h5>
+            <h5>777-777-7777</h5>
           </Row>
         </Col>
       </Row>
       <Row>
         <Col>
           <Row>
-            <h3>3209 Gravois Ave.</h3>
+            <h3>0000 South St.</h3>
           </Row>
           <Row>
-            <h6>Serving Downtown St. Louis and Soulard</h6>
+            <h6>Serving Area 7 and 8</h6>
           </Row>
           <Row>
-            <h5>314-771-7777</h5>
+            <h5>000-000-0000</h5>
           </Row>
         </Col>
         <Col>

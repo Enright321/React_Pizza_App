@@ -31,9 +31,6 @@ const MenuScreen = () => {
   let drinks = menuItems.filter(
     (menuItem) => menuItem.menuCategory === 'drinks'
   );
-  let desserts = menuItems.filter(
-    (menuItem) => menuItem.menuCategory === 'desserts'
-  );
 
   const urlMatch = window.location.href;
 
@@ -76,12 +73,6 @@ const MenuScreen = () => {
               ))
             : urlMatch === 'http://localhost:3000/menu/613c56ba902b44af907db16a'
             ? subs.map((foodCategory) => (
-                <Col key={foodCategory._id} sm={12} md={4}>
-                  <SpecificItem foodCategory={foodCategory} />
-                </Col>
-              ))
-            : urlMatch === 'http://localhost:3000/menu/614cfcba725eab501a5722d1'
-            ? desserts.map((foodCategory) => (
                 <Col key={foodCategory._id} sm={12} md={4}>
                   <SpecificItem foodCategory={foodCategory} />
                 </Col>
