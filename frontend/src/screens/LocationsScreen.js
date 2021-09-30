@@ -6,10 +6,10 @@ const LocationsScreen = () => {
     <div className='py-3'>
       <h2 className='text-center py-4'>STORE LOCATIONS</h2>
       <Row>
-        <Col>
+        <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
           <img src='./images/loc1.PNG' alt='location' variant='top' />
         </Col>
-        <Col>
+        <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
           <Row>
             <h3>1111 Main St.</h3>
           </Row>
@@ -21,8 +21,8 @@ const LocationsScreen = () => {
           </Row>
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className='py-3'>
+        <Col md={5}>
           <Row>
             <h3>2222 West St.</h3>
           </Row>
@@ -33,15 +33,15 @@ const LocationsScreen = () => {
             <h5>444-444-4444</h5>
           </Row>
         </Col>
-        <Col>
+        <Col md={6}>
           <img src='./images/loc2.jpg' alt='location' variant='top' />
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className='py-3'>
+        <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
           <img src='./images/loc3.jpg' alt='location' variant='top' />
         </Col>
-        <Col>
+        <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
           <Row>
             <h3>5555 West St.</h3>
           </Row>
@@ -53,8 +53,8 @@ const LocationsScreen = () => {
           </Row>
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className='py-3'>
+        <Col md={5}>
           <Row>
             <h3>0000 South St.</h3>
           </Row>
@@ -65,7 +65,7 @@ const LocationsScreen = () => {
             <h5>000-000-0000</h5>
           </Row>
         </Col>
-        <Col>
+        <Col md={6}>
           <img src='./images/loc4.jpg' alt='location' variant='top' />
         </Col>
       </Row>

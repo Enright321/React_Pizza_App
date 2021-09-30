@@ -20,6 +20,7 @@ import MenuItemEditScreen from './screens/MenuItemEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import LocationsScreen from './screens/LocationsScreen';
 import AboutScreen from './screens/AboutScreen';
+import ContactScreen from './screens/ContactScreen';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
           <Route path='/about' component={AboutScreen} />
           <Route path='/register' component={RegisterScreen} />
           <Route path='/profile' component={ProfileScreen} />
+          <Route path='/contact' component={ContactScreen} />
           <Route path='/menu/:id' component={MenuScreen} />
           <Route path='/item/:id' component={SpecificItemScreen} />
           <Route path='/cart/:id?' component={CartScreen} />

@@ -79,6 +79,14 @@ a:hover {
   margin: auto;
 }
 
+/* .contact-card {
+  background: var(--dark-main-color);
+  padding: 1rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 5px;
+} */
+
 main {
   background: var(--light-color);
 }

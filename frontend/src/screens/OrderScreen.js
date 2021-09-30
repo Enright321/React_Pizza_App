@@ -17,12 +17,8 @@ import {
 } from '../constants/orderConstants';
 
 const OrderScreen = ({ match, history }) => {
-  const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-  });
   const orderId = match.params.id;
+
   const [sdkReady, setSdkReady] = useState(false);
 
   const dispatch = useDispatch();
@@ -38,6 +34,17 @@ const OrderScreen = ({ match, history }) => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  if (!loading) {
+    //   Calculate prices
+    const addDecimals = (num) => {
+      return (Math.round(num * 100) / 100).toFixed(2);
+    };
+
+    order.itemsPrice = addDecimals(
+      order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+    );
+  }
 
   useEffect(() => {
     if (!userInfo) {
@@ -67,7 +74,7 @@ const OrderScreen = ({ match, history }) => {
         setSdkReady(true);
       }
     }
-  }, [dispatch, orderId, successPay, order, history, userInfo, successDeliver]);
+  }, [dispatch, orderId, successPay, successDeliver, order]);
 
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult);
@@ -94,25 +101,29 @@ const OrderScreen = ({ match, history }) => {
                 <strong>Name: </strong> {order.user.name}
               </p>
               <p>
+                <strong>Email: </strong>{' '}
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
-                <strong>Address: </strong>
-                {order.shippingAddress.address}, {order.shippingAddress.city},
+                <strong>Address:</strong>
+                {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
                 {order.shippingAddress.postalCode},{' '}
                 {order.shippingAddress.country}
               </p>
               {order.isDelivered ? (
-                <Message variant='success'>Delivered</Message>
+                <Message variant='success'>
+                  Delivered on {order.deliveredAt}
+                </Message>
               ) : (
-                <Message variant='danger'>Not yet delivered</Message>
+                <Message variant='danger'>Not Delivered</Message>
               )}
             </ListGroup.Item>
 
             <ListGroup.Item>
               <h2>Payment Method</h2>
               <p>
-                <strong>Method: {order.paymentMethod}</strong>
+                <strong>Method: </strong>
+                {order.paymentMethod}
               </p>
               {order.isPaid ? (
                 <Message variant='success'>Paid on {order.paidAt}</Message>
@@ -127,8 +138,8 @@ const OrderScreen = ({ match, history }) => {
                 <Message>Order is empty</Message>
               ) : (
                 <ListGroup variant='flush'>
-                  {order.orderItems.map((item, idx) => (
-                    <ListGroup.Item key={idx}>
+                  {order.orderItems.map((item, index) => (
+                    <ListGroup.Item key={index}>
                       <Row>
                         <Col md={1}>
                           <Image
@@ -136,7 +147,7 @@ const OrderScreen = ({ match, history }) => {
                             alt={item.name}
                             fluid
                             rounded
-                          />{' '}
+                          />
                         </Col>
                         <Col>
                           <Link to={`/product/${item.product}`}>
@@ -163,25 +174,25 @@ const OrderScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Items</Col>
-                  <Col>{formatter.format(order.itemsPrice)}</Col>
+                  <Col>${order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>{formatter.format(order.shippingPrice)}</Col>
+                  <Col>${order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Tax</Col>
-                  <Col>{formatter.format(order.taxPrice)}</Col>
+                  <Col>${order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>{formatter.format(order.totalPrice)}</Col>
+                  <Col>${order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
               {!order.isPaid && (
@@ -208,7 +219,7 @@ const OrderScreen = ({ match, history }) => {
                       className='btn btn-block'
                       onClick={deliverHandler}
                     >
-                      Mark as Delivered
+                      Mark As Delivered
                     </Button>
                   </ListGroup.Item>
                 )}
