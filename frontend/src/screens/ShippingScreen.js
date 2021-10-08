@@ -40,7 +40,7 @@ const ShippingScreen = ({ history }) => {
         <Form.Group controlId='city'>
           <Form.Label>City</Form.Label>
           <Form.Control
-            type='city'
+            type='text'
             placeholder='Enter City'
             value={city}
             required
@@ -60,7 +60,7 @@ const ShippingScreen = ({ history }) => {
         <Form.Group controlId='country'>
           <Form.Label>Country</Form.Label>
           <Form.Control
-            type='country'
+            type='text'
             placeholder='Enter Country'
             value={country}
             required

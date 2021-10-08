@@ -1,7 +1,7 @@
 import { Row, Col, Container } from 'react-bootstrap';
 import FoodCategory from '../components/FoodCategory';
 import PizzaSpecial from '../components/PizzaSpecial';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listMenuItems } from '../actions/menuItemActions';
 import Message from '../components/Message';
@@ -26,7 +26,47 @@ const HomeScreen = () => {
     <>
       <SlideCarousel></SlideCarousel>
       <Container>
-        <h2 className='title' style={{ paddingTop: '2rem' }}>
+        <div
+          style={{
+            position: 'absolute',
+            margin: 'auto',
+            // display: 'flex',
+            // alignItems: 'self-start',
+            // justifyContent: 'self-start',
+            // alignSelf: 'right',
+            // justifySelf: 'center',
+          }}
+        >
+          <img
+            className='bg-fillers'
+            style={{
+              position: 'sticky',
+              paddingTop: '5rem',
+              maxWidth: '1100px',
+              width: '100%',
+            }}
+            src='images/home-bg1.png'
+            alt='bg'
+          />
+          <img
+            className='bg-fillers'
+            style={{
+              position: 'sticky',
+              maxWidth: '1100px',
+              maxHeight: '1000px',
+              paddingTop: '5rem',
+              paddingBottom: '5rem',
+              width: '100%',
+            }}
+            src='images/home-bg2.png'
+            alt='bg'
+          />
+        </div>
+
+        <h2
+          className='title'
+          style={{ paddingTop: '2rem', position: 'relative' }}
+        >
           CHOOSE A CATEGORY TO GET STARTED!
         </h2>
 
@@ -46,7 +86,12 @@ const HomeScreen = () => {
           </Row>
         )}
 
-        <h2 className='title py-3'>TAKE A LOOK AT OUR SPECIALTY PIZZAS!</h2>
+        <h2
+          style={{ position: 'relative', marginTop: '5rem' }}
+          className='title py-3'
+        >
+          TAKE A LOOK AT OUR SPECIALTY PIZZAS!
+        </h2>
         {loading ? (
           <h3>Loading</h3>
         ) : error ? (

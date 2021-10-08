@@ -16,7 +16,8 @@ import { addToCart, removeFromCart } from '../actions/cartActions';
 const CartScreen = ({ match, location, history }) => {
   const menuItemId = match.params.id;
 
-  // const qty = location.search ? Number(location.search.split('=')[1]) : 1;
+  const qty = location.search ? Number(location.search.split('=')[1]) : 1;
+
   // const size = location.search ? location.search.split('=')[3] : '';
   // const toppings = location.search
   //   ? location.search.split('=').join(',').split('?')[2]
@@ -29,11 +30,11 @@ const CartScreen = ({ match, location, history }) => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  // useEffect(() => {
-  //   if (menuItemId) {
-  //     dispatch(addToCart(menuItemId, qty, size, toppings));
-  //   }
-  // }, [dispatch, menuItemId, qty, toppings, size]);
+  useEffect(() => {
+    if (menuItemId) {
+      dispatch(addToCart(menuItemId, qty));
+    }
+  }, [dispatch, menuItemId, qty]);
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
