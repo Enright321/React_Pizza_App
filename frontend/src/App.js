@@ -21,38 +21,41 @@ import OrderListScreen from './screens/OrderListScreen';
 import LocationsScreen from './screens/LocationsScreen';
 import AboutScreen from './screens/AboutScreen';
 import ContactScreen from './screens/ContactScreen';
+import TopScroll from './components/TopScroll';
 
 const App = () => {
   return (
     <Router>
-      <Header />
-      <main>
-        <Route path='/' component={HomeScreen} exact />
-        <Container>
-          <Route path='/order/:id' component={OrderScreen} />
-          <Route path='/shipping' component={ShippingScreen} />
-          <Route path='/payment' component={PaymentScreen} />
-          <Route path='/placeorder' component={PlaceOrderScreen} />
-          <Route path='/login' component={LoginScreen} />
-          <Route path='/locations' component={LocationsScreen} />
-          <Route path='/about' component={AboutScreen} />
-          <Route path='/register' component={RegisterScreen} />
-          <Route path='/profile' component={ProfileScreen} />
-          <Route path='/contact' component={ContactScreen} />
-          <Route path='/menu/:id' component={MenuScreen} />
-          <Route path='/item/:id' component={SpecificItemScreen} />
-          <Route path='/cart/:id?' component={CartScreen} />
-          <Route path='/admin/userlist' component={UserListScreen} />
-          <Route path='/admin/menuItemList' component={MenuItemListScreen} />
-          <Route path='/admin/orderList' component={OrderListScreen} />
-          <Route path='/admin/user/:id/edit' component={UserEditScreen} />
-          <Route
-            path='/admin/menuItem/:id/edit'
-            component={MenuItemEditScreen}
-          />
-        </Container>
-      </main>
-      <Footer />
+      <TopScroll>
+        <Header />
+        <main>
+          <Route path='/' component={HomeScreen} exact />
+          <Container>
+            <Route path='/order/:id' component={OrderScreen} />
+            <Route path='/shipping' component={ShippingScreen} />
+            <Route path='/payment' component={PaymentScreen} />
+            <Route path='/placeorder' component={PlaceOrderScreen} />
+            <Route path='/login' component={LoginScreen} />
+            <Route path='/locations' component={LocationsScreen} />
+            <Route path='/about' component={AboutScreen} />
+            <Route path='/register' component={RegisterScreen} />
+            <Route path='/profile' component={ProfileScreen} />
+            <Route path='/contact' component={ContactScreen} />
+            <Route path='/menu/:id' component={MenuScreen} />
+            <Route path='/item/:id' component={SpecificItemScreen} />
+            <Route path='/cart/:id?' component={CartScreen} />
+            <Route path='/admin/userlist' component={UserListScreen} />
+            <Route path='/admin/menuItemList' component={MenuItemListScreen} />
+            <Route path='/admin/orderList' component={OrderListScreen} />
+            <Route path='/admin/user/:id/edit' component={UserEditScreen} />
+            <Route
+              path='/admin/menuItem/:id/edit'
+              component={MenuItemEditScreen}
+            />
+          </Container>
+        </main>
+        <Footer />
+      </TopScroll>
     </Router>
   );
 };
