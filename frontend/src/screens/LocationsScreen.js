@@ -1,9 +1,13 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 const LocationsScreen = () => {
   return (
     <div className='py-3'>
+      <Helmet>
+        <title>Pizza Store | Locations</title>
+      </Helmet>
       <h2 className='text-center py-4'>STORE LOCATIONS</h2>
       <Row>
         <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>

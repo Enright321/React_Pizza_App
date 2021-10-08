@@ -15,7 +15,6 @@ Pizza store app built using MERN stack.
 
 # Bugs/Future Features
 
-- issue with shipping screen
 - ordering multiple variations of same item
 - migrating from create-react-app to next.js
 

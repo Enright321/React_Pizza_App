@@ -1,4 +1,5 @@
 import { Row, Col, Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 import FoodCategory from '../components/FoodCategory';
 import PizzaSpecial from '../components/PizzaSpecial';
 import React, { useEffect } from 'react';
@@ -9,9 +10,6 @@ import Loader from '../components/Loader';
 import SlideCarousel from '../components/SlideCarousel';
 
 const HomeScreen = () => {
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [postsPerPage, setPostsPerPage] = useState(3);
-
   const dispatch = useDispatch();
   const menuItemList = useSelector((state) => state.menuItemList);
   const { loading, error, menuItems } = menuItemList;
@@ -24,17 +22,23 @@ const HomeScreen = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Welcome to the Pizza Store</title>
+        <meta
+          name='description'
+          content='we sell the best pizza around.'
+        ></meta>
+        <meta
+          name='keywords'
+          content='pizza, pizza store, online pizza order, saint louis pizza, St. Louis Pizza'
+        ></meta>
+      </Helmet>
       <SlideCarousel></SlideCarousel>
       <Container>
         <div
           style={{
             position: 'absolute',
             margin: 'auto',
-            // display: 'flex',
-            // alignItems: 'self-start',
-            // justifyContent: 'self-start',
-            // alignSelf: 'right',
-            // justifySelf: 'center',
           }}
         >
           <img

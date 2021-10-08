@@ -1,9 +1,13 @@
 import React from 'react';
 import { Row, Col, Image, ListGroup } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 const ContactScreen = () => {
   return (
     <div className='py-3'>
+      <Helmet>
+        <title>Pizza Store | Contact</title>
+      </Helmet>
       <Row>
         <Col md={6}>
           <Image src='/images/loc1.png' alt='location 1' fluid />
