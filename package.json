@@ -1,5 +1,5 @@
 {
-  "name": "Pizza Store App",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://Enright321: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@github.com/Enright321/Elicias.git"
+    "url": "git+https://Enright321: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@github.com/Enright321/React_Pizza_App.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Enright321/Elicias/issues"
+    "url": "https://github.com/Enright321/React_Pizza_App/issues"
   },
-  "homepage": "https://github.com/Enright321/Elicias#readme",
+  "homepage": "https://github.com/Enright321/React_Pizza_App#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
