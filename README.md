@@ -2,6 +2,8 @@
 
 ![Alt Text](https://media.giphy.com/media/CDIPB3jWHKGzS5aGSh/giphy.gif)
 
+[Click me to go to site!](https://pizzastoreapp.herokuapp.com/)
+
 Pizza store app built using MERN stack.
 
 # Features
