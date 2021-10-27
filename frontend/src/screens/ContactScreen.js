@@ -8,6 +8,7 @@ const ContactScreen = () => {
       <Helmet>
         <title>Pizza Store | Contact</title>
       </Helmet>
+
       <Row>
         <Col md={6}>
           <Image src='/images/loc1.png' alt='location 1' fluid />

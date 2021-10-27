@@ -18,10 +18,6 @@
   font-size: 0.95rem;
 }
 
-/* option:checked {
-  color: red !important;
-} */
-
 /* General */
 img {
   width: 100%;
@@ -34,6 +30,7 @@ h4,
 h5,
 h6 {
   font-family: 'Roboto Slab', serif;
+  z-index: 100;
 }
 
 .title {
@@ -78,14 +75,6 @@ a:hover {
   max-width: 1550px;
   margin: auto;
 }
-
-/* .contact-card {
-  background: var(--dark-main-color);
-  padding: 1rem;
-  margin-top: 2rem;
-  border: none;
-  border-radius: 5px;
-} */
 
 main {
   background: var(--light-color);
@@ -196,6 +185,67 @@ footer div.text-center.py-3.col {
   bottom: 100%; */
 }
 
+/* Background */
+.bgobj1 {
+  border-radius: 100% 0% 72% 28% / 65% 58% 42% 35%;
+  background-color: var(--light-secondary);
+  padding: 130px;
+  position: absolute;
+  top: 500px;
+  right: -205px;
+}
+.bgobj2 {
+  border-radius: 53% 47% 52% 48% / 0% 0% 100% 100%;
+  background-color: var(--light-secondary);
+  padding: 75px;
+  position: absolute;
+  top: 0;
+  right: 345px;
+  width: 1000px;
+  z-index: 0;
+}
+.bgobj3 {
+  border-radius: 27% 46% 74% 20% / 36% 75% 24% 59%;
+  background-color: var(--dark-main-color);
+  padding: 75px;
+  position: absolute;
+  top: 600px;
+  left: -100px;
+  width: 500px;
+  z-index: 0;
+}
+.bgobj4 {
+  border-radius: 79% 21% 44% 56% / 87% 22% 78% 13%;
+  background-color: var(--light-secondary);
+  padding: 75px;
+  position: absolute;
+  top: 1080px;
+  left: -120px;
+  width: 800px;
+  z-index: 0;
+}
+.bgobj5 {
+  border-radius: 52% 48% 49% 51% / 50% 48% 52% 50%;
+  background-color: var(--dark-main-color);
+  padding: 75px;
+  position: absolute;
+  bottom: 30px;
+  right: -100px;
+  width: 300px;
+  /* height: 200px; */
+  z-index: 0;
+}
+.bgobj6 {
+  border-radius: 29% 71% 78% 22% / 40% 26% 74% 60%;
+  background-color: var(--light-secondary);
+  padding: 75px;
+  position: absolute;
+  bottom: 400px;
+  left: 0px;
+  width: 300px;
+  z-index: 0;
+}
+
 @media only screen and (max-width: 1200px) {
   .btn-2 {
     font-size: smaller;
@@ -205,6 +255,9 @@ footer div.text-center.py-3.col {
   }
   strong {
     font-size: 0.9rem;
+  }
+  .bgobj4 {
+    display: none;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -227,7 +280,12 @@ footer div.text-center.py-3.col {
   strong {
     font-size: 1rem;
   }
-  .bg-fillers {
+  .bgobj1,
+  .bgobj2,
+  .bgobj3,
+  .bgobj4,
+  .bgobj5,
+  .bgobj6 {
     display: none;
   }
 }

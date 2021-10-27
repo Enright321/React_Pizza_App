@@ -21,7 +21,7 @@ const HomeScreen = () => {
   let pizzaSpecials = menuItems;
 
   return (
-    <>
+    <div style={{ overflow: 'hidden' }}>
       <Helmet>
         <title>Welcome to the Pizza Store</title>
         <meta
@@ -34,38 +34,17 @@ const HomeScreen = () => {
         ></meta>
       </Helmet>
       <SlideCarousel></SlideCarousel>
-      <Container>
+      <Container style={{ position: 'relative' }}>
+        <div className='bgobj1'></div>
+        <div className='bgobj2'></div>
+        <div className='bgobj3'></div>
+        <div className='bgobj4'></div>
+        <div className='bgobj5'></div>
         <div
-          style={{
-            position: 'absolute',
-            margin: 'auto',
-          }}
-        >
-          <img
-            className='bg-fillers'
-            style={{
-              position: 'sticky',
-              paddingTop: '5rem',
-              maxWidth: '1100px',
-              width: '100%',
-            }}
-            src='images/home-bg1.png'
-            alt='bg'
-          />
-          <img
-            className='bg-fillers'
-            style={{
-              position: 'sticky',
-              maxWidth: '1100px',
-              maxHeight: '1000px',
-              paddingTop: '5rem',
-              paddingBottom: '5rem',
-              width: '100%',
-            }}
-            src='images/home-bg2.png'
-            alt='bg'
-          />
-        </div>
+          className='bgobj5'
+          style={{ bottom: '800px', width: '500px', height: '100px' }}
+        ></div>
+        <div className='bgobj6'></div>
 
         <h2
           className='title'
@@ -112,7 +91,7 @@ const HomeScreen = () => {
           </Row>
         )}
       </Container>
-    </>
+    </div>
   );
 };
 
